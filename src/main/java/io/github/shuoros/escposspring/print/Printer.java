@@ -1,9 +1,9 @@
 package io.github.shuoros.escposspring.print;
 
 public interface Printer {
-   void open();
+    void open();
 
-   void write(byte[] command);
+    void write(byte[] command);
 
-   void close();
+    void close();
 }

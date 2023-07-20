@@ -15,55 +15,55 @@ import java.util.Map;
 
 public class QRCodeGenerator {
 
-   public BufferedImage generate(String textValue) throws QRCodeException {
-      return generate(textValue, 150);
-   }
+    public BufferedImage generate(String textValue) throws QRCodeException {
+        return generate(textValue, 150);
+    }
 
-   public BufferedImage generate(String textValue, int size) throws QRCodeException {
+    public BufferedImage generate(String textValue, int size) throws QRCodeException {
 
-      try {
+        try {
 
-         Map<EncodeHintType, Object> hintMap = setEncodingbehavior();
+            Map<EncodeHintType, Object> hintMap = setEncodingbehavior();
 
-         BitMatrix bm = getByteMatrix(textValue, size, hintMap);
+            BitMatrix bm = getByteMatrix(textValue, size, hintMap);
 
-         return getImage(bm);
+            return getImage(bm);
 
-      } catch (WriterException e) {
-         throw new QRCodeException("QRCode generation error", e);
-      }
-   }
+        } catch (WriterException e) {
+            throw new QRCodeException("QRCode generation error", e);
+        }
+    }
 
-   private Map<EncodeHintType, Object> setEncodingbehavior(){
-      Map<EncodeHintType, Object> hintMap = new EnumMap<>(EncodeHintType.class);
-      hintMap.put(EncodeHintType.CHARACTER_SET, "UTF-8");
-      hintMap.put(EncodeHintType.MARGIN, 1);
-      hintMap.put(EncodeHintType.ERROR_CORRECTION, ErrorCorrectionLevel.L);
-      return hintMap;
-   }
+    private Map<EncodeHintType, Object> setEncodingbehavior() {
+        Map<EncodeHintType, Object> hintMap = new EnumMap<>(EncodeHintType.class);
+        hintMap.put(EncodeHintType.CHARACTER_SET, "UTF-8");
+        hintMap.put(EncodeHintType.MARGIN, 1);
+        hintMap.put(EncodeHintType.ERROR_CORRECTION, ErrorCorrectionLevel.L);
+        return hintMap;
+    }
 
 
-   private BitMatrix getByteMatrix(String textValue, int size, Map<EncodeHintType, Object> hintMap) throws WriterException {
-      QRCodeWriter qrCodeWriter = new QRCodeWriter();
-      return qrCodeWriter.encode(textValue, BarcodeFormat.QR_CODE, size, size, hintMap);
-   }
+    private BitMatrix getByteMatrix(String textValue, int size, Map<EncodeHintType, Object> hintMap) throws WriterException {
+        QRCodeWriter qrCodeWriter = new QRCodeWriter();
+        return qrCodeWriter.encode(textValue, BarcodeFormat.QR_CODE, size, size, hintMap);
+    }
 
-   private BufferedImage getImage(BitMatrix bm){
-      BufferedImage image = new BufferedImage(bm.getWidth(), bm.getWidth(), BufferedImage.TYPE_INT_RGB);
-      image.createGraphics();
-      Graphics2D graphics = (Graphics2D) image.getGraphics();
-      graphics.setColor(Color.WHITE);
-      graphics.fillRect(0, 0, bm.getWidth(), bm.getWidth());
-      graphics.setColor(Color.BLACK);
+    private BufferedImage getImage(BitMatrix bm) {
+        BufferedImage image = new BufferedImage(bm.getWidth(), bm.getWidth(), BufferedImage.TYPE_INT_RGB);
+        image.createGraphics();
+        Graphics2D graphics = (Graphics2D) image.getGraphics();
+        graphics.setColor(Color.WHITE);
+        graphics.fillRect(0, 0, bm.getWidth(), bm.getWidth());
+        graphics.setColor(Color.BLACK);
 
-      for (int i = 0; i < bm.getWidth(); i++) {
-         for (int j = 0; j < bm.getWidth(); j++) {
-            if (bm.get(i, j)) {
-               graphics.fillRect(i, j, 1, 1);
+        for (int i = 0; i < bm.getWidth(); i++) {
+            for (int j = 0; j < bm.getWidth(); j++) {
+                if (bm.get(i, j)) {
+                    graphics.fillRect(i, j, 1, 1);
+                }
             }
-         }
-      }
-      return image;
-   }
+        }
+        return image;
+    }
 }
 

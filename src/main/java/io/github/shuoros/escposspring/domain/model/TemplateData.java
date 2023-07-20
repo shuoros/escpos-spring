@@ -21,6 +21,7 @@ import java.util.List;
 public class TemplateData implements PrintData {
 
     private static final SpringTemplateEngine templateEngine;
+
     static {
         ClassLoaderTemplateResolver resolver = new ClassLoaderTemplateResolver();
         resolver.setPrefix("templates/mail/");
