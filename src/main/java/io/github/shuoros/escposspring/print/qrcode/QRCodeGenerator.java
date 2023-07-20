@@ -6,7 +6,7 @@ import com.google.zxing.WriterException;
 import com.google.zxing.common.BitMatrix;
 import com.google.zxing.qrcode.QRCodeWriter;
 import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
-import io.github.escposjava.print.exceptions.QRCodeException;
+import io.github.shuoros.escposspring.print.exceptions.QRCodeException;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
