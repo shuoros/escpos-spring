@@ -3,7 +3,7 @@ package io.github.shuoros.escposspring.print;
 import com.pi4j.io.serial.Serial;
 import com.pi4j.io.serial.SerialFactory;
 
-public class SerialPrinter implements io.github.escposjava.print.Printer {
+public class SerialPrinter implements Printer {
 
    private final Serial printer = SerialFactory.createInstance();
    private final String address;

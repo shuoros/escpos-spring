@@ -5,7 +5,7 @@ public class Commands {
    public static final byte[] CTL_LF          = {0x0a};          // Print and line feed
 
    // Beeper
-   public static final byte[] BEEPER          = {0x1b,0x42,0x05,0x09}; // Beeps 5 times for 9*50ms each time
+   public static final byte[] BEEPER          = {0x1b,0x42,0x01,0x09}; // Beeps 5 times for 9*50ms each time
 
    // Line Spacing
    public static final byte[] LINE_SPACE_24   = {0x1b,0x33,24}; // Set the line spacing at 24

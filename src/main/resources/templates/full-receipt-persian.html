@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <style>
+      #invoice-POS {
+        background: #FFF;
+      }
+
+      #invoice-POS ::selection {
+        background: #f31544;
+        color: #FFF;
+      }
+
+      #invoice-POS ::moz-selection {
+        background: #f31544;
+        color: #FFF;
+      }
+
+      #invoice-POS h1 {
+        font-size: 1.5em;
+        color: #222;
+      }
+
+      #invoice-POS h2 {
+        font-size: 2em;
+      }
+
+      #invoice-POS h3 {
+        font-size: 1.2em;
+        font-weight: 300;
+        line-height: 2em;
+      }
+
+      #invoice-POS p {
+        font-size: 1.7em;
+        font-weight: 800;
+        color: #666;
+        line-height: 1.2em;
+      }
+
+      #invoice-POS #top,
+      #invoice-POS #mid,
+      #invoice-POS #bot {
+        border-bottom: 1px solid #EEE;
+      }
+
+      #invoice-POS #top {
+        min-height: 100px;
+      }
+
+      #invoice-POS #mid {
+        min-height: 80px;
+      }
+
+      #invoice-POS #bot {
+        min-height: 50px;
+      }
+
+      #invoice-POS #top .logo {
+        height: 60px;
+        width: 60px;
+        background: url(http://michaeltruong.ca/images/logo1.png) no-repeat;
+        background-size: 60px 60px;
+      }
+
+      #invoice-POS .clientlogo {
+        float: left;
+        height: 60px;
+        width: 60px;
+        background: url(http://michaeltruong.ca/images/client.jpg) no-repeat;
+        background-size: 60px 60px;
+        border-radius: 50px;
+      }
+
+      #invoice-POS .info {
+        display: block;
+        margin-left: 0;
+        text-align: center;
+      }
+
+      #invoice-POS .title {
+        float: right;
+      }
+
+      #invoice-POS .title p {
+        text-align: right;
+      }
+
+      #invoice-POS table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      #invoice-POS .tabletitle {
+        font-size: 0.7em;
+        font-weight: 800;
+        background: #000;
+        color: #FFF;
+      }
+
+      #invoice-POS .service {
+        border-bottom: 1px solid #EEE;
+      }
+
+      #invoice-POS .item {
+        width: 32mm;
+        text-align: center;
+      }
+
+      #invoice-POS .Hours {
+        text-align: center;
+      }
+
+      #invoice-POS .Rate {
+        text-align: center;
+      }
+
+      #invoice-POS .payment {
+        text-align: center;
+      }
+
+      #invoice-POS .itemtext {
+        text-align: center;
+        font-size: 2em;
+        font-weight: 800;
+      }
+
+      #invoice-POS #legalcopy {
+        margin-top: 5mm;
+        text-align: center;
+      }
+    </style>
+    <title>رسید</title>
+</head>
+<body>
+<div id="invoice-POS">
+    <div id="mid">
+        <div class="info">
+            <h2>نام فروشگاه</h2>
+            <p> ۱۱:۴۳ ۱۴۰۲/۰۴/۲۵ <br /> شماره سفارش: ۱۳۲۱ </p>
+            <p> هشت دی کوچه نوری پنجم ساختمان فرشید <br /> ابراهیم رییسی <br /> ۰۹۱۱۲۳۴۵۶۷۸ <br />
+            </p>
+        </div>
+    </div>
+    <div id="bot">
+        <div id="table">
+            <table>
+                <tr class="tabletitle">
+                    <td class="Rate">
+                        <h2>قیمت</h2>
+                    </td>
+                    <td class="Hours">
+                        <h2>تعداد</h2>
+                    </td>
+                    <td class="item">
+                        <h2>نام</h2>
+                    </td>
+                </tr>
+                <tr class="service">
+                    <td class="tableitem">
+                        <p class="itemtext">۳۰۰,۰۰</p>
+                    </td>
+                    <td class="tableitem">
+                        <p class="itemtext">۵</p>
+                    </td>
+                    <td class="tableitem">
+                        <p class="itemtext">آیتم</p>
+                    </td>
+                </tr>
+                <tr class="tabletitle">
+                    <td class="payment">
+                        <h2>۳۰۰,۰۰۰</h2>
+                    </td>
+                    <td class="Rate">
+                        <h2>جمع</h2>
+                    </td>
+                    <td></td>
+                </tr>
+                <tr class="tabletitle">
+                    <td class="payment">
+                        <h2>تومان</h2>
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+        <div id="legalcopy">
+            <p class="legal">
+                <strong>از خرید شما سپاسگذاریم!</strong>
+            </p>
+            <p class="legal">
+                <strong>نام فروشگاه</strong>
+            </p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
