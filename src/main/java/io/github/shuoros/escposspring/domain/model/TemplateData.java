@@ -24,9 +24,9 @@ public class TemplateData implements PrintData {
 
     static {
         ClassLoaderTemplateResolver resolver = new ClassLoaderTemplateResolver();
-        resolver.setPrefix("templates/mail/");
+        resolver.setPrefix("templates/");
         resolver.setSuffix(".html");
-        resolver.setTemplateMode("HTML5");
+        resolver.setTemplateMode("HTML");
         resolver.setOrder(1);
         resolver.setCacheable(true);
         templateEngine = new SpringTemplateEngine();
@@ -72,7 +72,12 @@ public class TemplateData implements PrintData {
 
     private static Context generateContext(List<Variable> variables) {
         final Context myContext = new Context();
-        variables.stream().peek(variable -> myContext.setVariable(variable.getKey(), variable.getValue())).close();
+        if (variables != null)
+            variables.stream()
+                    .peek(variable ->
+                            myContext.setVariable(variable.getKey(), variable.getValue())
+                    )
+                    .close();
         return myContext;
     }
 
